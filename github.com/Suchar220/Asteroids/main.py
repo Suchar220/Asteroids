@@ -3,6 +3,7 @@ from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+import sys
 
 def main():
     print("Starting Asteroids!")
@@ -38,7 +39,14 @@ def main():
         
         dt = clock.tick(60) / 1000
         updatable.update(dt)
-        print(clock.get_fps())  
-    
+        
+        # After update step in game loop - this should be indented the same as the lines above
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game over!")
+                sys.exit()
+                
+        print(clock.get_fps())
 if __name__ == "__main__":
     main()
+
