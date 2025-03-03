@@ -21,7 +21,7 @@ def main():
         pygame.display.flip()
         
         dt = clock.tick(60) / 1000
-        
+        player.update(dt)
         print(clock.get_fps())  
     
 if __name__ == "__main__":
