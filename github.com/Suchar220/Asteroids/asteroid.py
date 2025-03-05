@@ -8,7 +8,7 @@ class Asteroid(CircleShape):
     
     def draw(self, surface):
         # Override the draw method to draw a circle
-        pygame.draw.circle(surface, (255, 255, 255), (int(self.position.x), int(self.position.y)), self.radius, 2)
+        pygame.draw.circle(surface, (255, 255, 255), (int(self.position.x), int(self.position.y)), self.radius)
     
     def update(self, dt):
         # Override the update method to move the asteroid
